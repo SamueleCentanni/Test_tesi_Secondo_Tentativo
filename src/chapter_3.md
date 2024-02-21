@@ -21,3 +21,4 @@ git push -u origin main
 ```
 
 Abbiamo fatto. Nel nostro repo troveremo il nostro mdBook.
+Nel capitolo successivo vedremo come settare le Actions.
