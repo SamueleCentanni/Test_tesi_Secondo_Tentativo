@@ -26,7 +26,7 @@ A questo punto viene creata la cartella book, che contiene tutti i file html e c
 ## Vedere il sito
 Per vedere il sito si può:
 - ad ogni modifica, fare la build del progetto con il comando ` mdbook build `, e aprire il sito con il comando `mdbook build --open`. Ciò che viene aperto è in realta una sorta di PDF, il sito non è ovviamente pubblico sulla rete;
-- utilizzare il comando ` mdbook serve `, che guarderà ogni modifica fatta nella nostra cartella src e in automatico farà la build del sito. Con questo comando è possibile visitare il sito, salvato in locale, all'[indirizzo](http://localhost:3000/).
+- utilizzare il comando ` mdbook serve `, che guarderà ogni modifica fatta nella nostra cartella src e in automatico farà la build del sito. Con questo comando è possibile visitare il sito, salvato in locale, all'indirizzo: .
 
 ### Collegamento con GitHub
 Per vedere come collegare il progetto a gitHub, vedi il capitolo 3.
