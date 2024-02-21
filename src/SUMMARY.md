@@ -1,5 +1,6 @@
 # Summary
 
-- [chapter_1](./chapter_1.md)
-- [chapter 2](./chapter_2.md)
-- [chapter 3](./chapter_3.md)
+- [Introduzione](./chapter_1.md)
+- [Creazione mdBook](./chapter_2.md)
+- [Integrazione con GitHub](./chapter_3.md)
+- [Actions](./chapter_4.md)
