@@ -13,12 +13,20 @@ git add .
 git commit -m "Commento del commit"
 ```
 
-Ora bisogna pushare il tutto sul branch principale, che è il branch **main**. Per farlo, prima si esegue `git fetch`. Esso serve per mettere come predefinito il branch main (qualora non venisse trovato da gitHub).
-Infatti, dal 2020 in poi, il branch principale si chiama **master**, anche se quando si crea il repository ci si trova di default sul branch **main**. Dunque con il comando `git fetch` risolviamo questo problema.
-A questo punto, si esegue il push:
+Prima di fare il push dei tuoi file, se il tuo repository su GitHub utilizza main come branch principale (pratica standard per i repository creati dopo il 2020), assicurati di essere sul branch corretto eseguendo:
+```bash
+git branch -M main
 ```
+Questo comando rinomina il branch locale in main, allineandolo con il nome del branch principale su GitHub. Ora puoi eseguire il push sul branch main:
+```bash
 git push -u origin main
 ```
+> nota che, nel caso ci fossero problemi, è possibile usare il comando `git fetch`.
 
 Abbiamo fatto. Nel nostro repo troveremo il nostro mdBook.
+E' possibile in ogni momento aggiornare la propria directory locale (quella sul tuo pc, creata seguendo il primo capitolo) usando, dal prompt dei comandi, il comando:
+```bash
+git pull
+```
+
 Nel capitolo successivo vedremo come settare le Actions.
