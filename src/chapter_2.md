@@ -1,146 +1,32 @@
-# Java Core
+# mdBook
+## Installazione mdBook
+Per installare mdBook, si deve prima di tutto installare Rust. Il link per scaricare Rust, linguaggio su cui si basa mdBook, è il seguente: [Download Rust](https://www.rust-lang.org/tools/install).
+Una volta fatto ciò, si va su linea di comando, ci si sposta nella directory in cui si vuole installare mdBook, e si usa il comando:
+```bash
+cargo install mdbook
+```
 
-### Software
+A questo punto abbiamo installato mdbook.
 
-* [Java SE Development Kit](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
-* [IntelliJ IDEA](https://www.jetbrains.com/idea/)
-* [Scene Builder](https://gluonhq.com/products/scene-builder/)
-* [Mermaid](https://mermaid.js.org/)
+## Creazione Primo Progetto
+Per creare il primo progetto, si crea una cartella, all'interno della quale si vuole salvare il progetto, e da linea di comando si usano i seguenti comandi:
 
-### Books
-* **Big Java - Early Objects 7th Edition; Horstmann; Wiley Press (intermediate)**
-* Effective Java; Bloch; O'Reilly (advanced)
+```bash
+mdbook init project-name
+```
+Con questo comando si crea il progetto, troveremo la cartella src, che conterrà il file SUMMARY.md e il file relativo al primo capitolo del libro, Chapter_1. Si vedranno poi i file .gitignore e book.toml, che gestisce le impostazioni del nostro libro.
+Si entra nella cartella appena creata e, sempre da linea di comando, si digita:
 
-### Videos
-* [YouTube OOP Java](https://www.youtube.com/watch?v=y3H3xwI0prM&list=PLhlcRDRHVUzTruZmXalUSJAK26pouP8ST)
-* [YouTube IntelliJ](https://www.youtube.com/c/intellijidea/videos)
+```bash
+mdbook build 
+```
 
-### Official Tutorials
-* [IntelliJ Tutorial](https://www.jetbrains.com/idea/resources/)
-* [Java SE Tutorial](https://docs.oracle.com/javase/tutorial/)
-* [Java SE API](https://docs.oracle.com/en/java/javase/17/docs/api/index.html)
+A questo punto viene creata la cartella book, che contiene tutti i file html e css necessari al progetto. Siamo pronti ad aggiungere i file markdown dentro la cartella src, e, per effettivamente vederli nel sito, si deve aggiornare il file SUMMARY.md
 
-### Other Tutorials/Exercises
-* https://java-programming.mooc.fi/
-* https://www.baeldung.com/
-* https://jenkov.com/
-* https://www.w3resource.com/
-* https://codingbat.com/
-* https://www.programiz.com/
-* https://exercism.io/
-* https://github.com/TheAlgorithms/Java/
+## Vedere il sito
+Per vedere il sito si può:
+- ad ogni modifica, fare la build del progetto con il comando ` mdbook build `, e aprire il sito con il comando `mdbook build --open`. Ciò che viene aperto è in realta una sorta di PDF, il sito non è ovviamente pubblico sulla rete;
+- utilizzare il comando ` mdbook serve `, che guarderà ogni modifica fatta nella nostra cartella src e in automatico farà la build del sito. Con questo comando è possibile visitare il sito, salvato in locale, all'[indirizzo](http://localhost:3000/).
 
-### Modules
-[E1] From Functions to Classes
-
-* Evolution of programming languages
-* Limits of procedural programming
-* Modularization, reuse of code, and object-oriented programming
-* Object-oriented programming key features
-
-[E2] Basics
-
-> Read: Big Java (Chapter 2-4-5-6-7)
-
-> Lab:
-> [com.nbicocchi.exercises.warmup](https://github.com/nbicocchi/java-core/tree/main/code/src/main/java/com/nbicocchi/exercises/warmup),
-> [com.nbicocchi.exercises.arrays](https://github.com/nbicocchi/java-core/tree/main/code/src/main/java/com/nbicocchi/exercises/arrays),
-> [com.nbicocchi.exercises.strings](https://github.com/nbicocchi/java-core/tree/main/code/src/main/java/com/nbicocchi/exercises/strings) 
-
-* Variables, methods and parameter passing
-* Fundamental data types
-* Decisions
-* Loops
-* Arrays (and brief introduction to ArrayList)
-* Strings
-* Input and output
-* Random numbers
-* [Coding Standard](https://github.com/nbicocchi/java-core/blob/main/assets/books/Java-Coding-Standard.pdf)
-
-[E3] Object Oriented Design
-
-> Read: Big Java (Chapter 3-8-9-10-12)
-> Read: UML Distilled (Chapter 3)
-
-> Lab: [com.nbicocchi.exercises.oop](https://github.com/nbicocchi/java-core/tree/main/code/src/main/java/com/nbicocchi/exercises/oop)
-
-* Instance variables and encapsulation
-* Specifying the public interface of a class (and its implementation)
-* Static variables and methods
-* Inheritance hierarchies
-* Abstract classes
-* Interfaces (and anonymous implementations)
-* Object: the cosmic superclass
-* Wrapper types
-* UML class diagrams 
-
-[E4] Data Structures (Collections Framework)
-
-> Read: Big Java (Chapter 14-15)
-
-> Lab: package [com.nbicocchi.exercises.collections](https://github.com/nbicocchi/java-core/tree/main/code/src/main/java/com/nbicocchi/exercises/collections)
-
-* Iterable and Iterator interfaces
-* List interface and its implementations (ArrayList, LinkedList)
-* Set interface and its implementations (HashSet, LinkedHashSet, TreeSet)
-* Deque interface and its implementations (ArrayDeque, LinkedList)
-* Map interface and its implementations (HashMap, LinkedHashMap, TreeMap)
-* Sorting and searching
-
-[E5] Generic Data Structures (Generics)
-
-> Read: Big Java (Chapter 18)
-
-> Lab: [com.nbicocchi.exercises.generics](https://github.com/nbicocchi/java-core/tree/main/code/src/main/java/com/nbicocchi/exercises/generics)
-
-* Generic classes and type parameters
-* Implementing generic types
-* Generic methods
-* Constraining type parameters
-* Type erasure
-
-[E6] Functional Programming
-
-> Read: Big Java (Chapter 19), 
-> Object Oriented vs Functional Programming (Chapter 1)
-
-> Lab: [com.nbicocchi.exercises.functional](https://github.com/nbicocchi/java-core/tree/main/code/src/main/java/com/nbicocchi/exercises/functional)
-
-* Lambda expressions
-* Functional interfaces
-* Producing, transforming, and collecting functional streams
-* The *Optional* type
-
-[E7] Exceptions
-
-> Read: Big Java (Chapter 11)
-
-> Lab: [com.nbicocchi.exercises.exceptions](https://github.com/nbicocchi/java-core/tree/main/code/src/main/java/com/nbicocchi/exercises/exceptions)
-
-* Throwing exceptions
-* Catching exceptions
-* Checked and unchecked exceptions
-* Closing resources
-
-[E8] IO/NIO Frameworks
-
-> Read: Big Java (Chapter 21)
-
-> Lab: [com.nbicocchi.exercises.nio](https://github.com/nbicocchi/java-core/tree/main/code/src/main/java/com/nbicocchi/exercises/nio)
-
-* IO vs NIO frameworks
-* Manipulating paths
-* Manipulating filesystem (copy, move, etc)
-* Reading and writing files
-
-[E9] Multi-threading
-
-> Read: Big Java (Chapter 22)
-
-> Lab: [com.nbicocchi.exercises.threads](https://github.com/nbicocchi/java-core/tree/main/code/src/main/java/com/nbicocchi/exercises/threads)
-
-* Thread states
-* Thread interference
-* Thread synchronisation (synchronised/wait/notify)
-* ExecutorService
-* Callable/Future/Task
+### Collegamento con GitHub
+Per vedere come collegare il progetto a gitHub, vedi il capitolo 3.
