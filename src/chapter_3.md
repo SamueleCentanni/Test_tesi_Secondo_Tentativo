@@ -1,32 +1,23 @@
-# mdBook
-## Installazione mdBook
-Per installare mdBook, si deve prima di tutto installare Rust. Il link per scaricare Rust, linguaggio su cui si basa mdBook, è il seguente: [Download Rust](https://www.rust-lang.org/tools/install).
-Una volta fatto ciò, si va su linea di comando, ci si sposta nella directory in cui si vuole installare mdBook, e si usa il comando:
+# GitHub
+## Collegamento GitHub con l'mdBook locale
+Per prima cosa bisogna andare dentro la cartella in cui è stato creato il progetto mdbook. A questo punto, da linea di comando, si digita:
+`git init`
+
+Si deve ora collegare il link del repo GitHub (che deve ovviamente già esistere) al progetto mdBook. Lo si fa inserendo:
+`git remote add origin URL_DEL_TUO_REPOSITORY`
+
+## Aggiunta dei file locali al repository
+Ora possiamo inserire i file locali (quindi la cartella src, il file .toml e il file .gitignore) nel nostro repo. Per farlo, è sufficiente digitare:
 ```bash
-cargo install mdbook
+git add .
+git commit -m "Commento del commit"
 ```
 
-A questo punto abbiamo installato mdbook.
-
-## Creazione Primo Progetto
-Per creare il primo progetto, si crea una cartella, all'interno della quale si vuole salvare il progetto, e da linea di comando si usano i seguenti comandi:
-
-```bash
-mdbook init project-name
+Ora bisogna pushare il tutto sul branch principale, che è il branch **main**. Per farlo, prima si esegue `git fetch`. Esso serve per mettere come predefinito il branch main (qualora non venisse trovato da gitHub).
+Infatti, dal 2020 in poi, il branch principale si chiama **master**, anche se quando si crea il repository ci si trova di default sul branch **main**. Dunque con il comando `git fetch` risolviamo questo problema.
+A questo punto, si esegue il push:
 ```
-Con questo comando si crea il progetto, troveremo la cartella src, che conterrà il file SUMMARY.md e il file relativo al primo capitolo del libro, Chapter_1. Si vedranno poi i file .gitignore e book.toml, che gestisce le impostazioni del nostro libro.
-Si entra nella cartella appena creata e, sempre da linea di comando, si digita:
-
-```bash
-mdbook build 
+git push -u origin main
 ```
 
-A questo punto viene creata la cartella book, che contiene tutti i file html e css necessari al progetto. Siamo pronti ad aggiungere i file markdown dentro la cartella src, e, per effettivamente vederli nel sito, si deve aggiornare il file SUMMARY.md
-
-## Vedere il sito
-Per vedere il sito si può:
-- ad ogni modifica, fare la build del progetto con il comando ` mdbook build `, e aprire il sito con il comando `mdbook build --open`. Ciò che viene aperto è in realta una sorta di PDF, il sito non è ovviamente pubblico sulla rete;
-- utilizzare il comando ` mdbook serve `, che guarderà ogni modifica fatta nella nostra cartella src e in automatico farà la build del sito. Con questo comando è possibile visitare il sito, salvato in locale, all'[indirizzo](http://localhost:3000/).
-
-### Collegamento con GitHub
-Per vedere come collegare il progetto a gitHub, vedi il capitolo 3.
+Abbiamo fatto. Nel nostro repo troveremo il nostro mdBook.
